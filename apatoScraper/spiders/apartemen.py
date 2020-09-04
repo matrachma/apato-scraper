@@ -3,6 +3,7 @@ import scrapy
 import unicodedata
 
 from apatoScraper.items import SewaApartmentItem
+from scrapy.utils.project import get_project_settings
 
 
 class ApartemenSpider(scrapy.Spider):
@@ -30,7 +31,10 @@ class ApartemenSpider(scrapy.Spider):
 
     @staticmethod
     def parse_item(selected, url):
-        raw = selected.get()
+        if get_project_settings().get("STORE_RAW"):
+            raw = selected.get()
+        else:
+            raw = ""
         url_split = url.split('/')
         if 'page' in url_split:
             area = url_split[-4]

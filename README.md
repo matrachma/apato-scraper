@@ -50,6 +50,13 @@ CONNECTION_STRING = "{drivername}://{user}:{passwd}@{host}:{port}/{db_name}".for
 )
 ```
 
+For storing raw HTML listing item, set `STORE_RAW` to `True`
+```python
+# Store raw HTML
+STORE_RAW = True
+```
+Warning! It will store a huge data.
+
 ## Run Program
 Scrap sewa-apartemen.net:
 ```commandline
