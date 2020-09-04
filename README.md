@@ -14,20 +14,20 @@
 
 ## Setup
 Clone the project:
-```bash
-git clone https://github.com/matrachma/apato-scraper.git
-cd apato-scraper
+```commandline
+> git clone https://github.com/matrachma/apato-scraper.git
+> cd apato-scraper
 ```
 
-Create and start a a virtual environment:
+Create and start a virtual environment:
 ```commandline
-virtualenv venv --no-site-packages
-source venv/bin/activate
+> virtualenv venv --no-site-packages
+> source venv/bin/activate
 ```
 
 Install the project dependencies:
 ```commandline
-pip install -r requirements.txt
+> pip install -r requirements.txt
 ```
 
 Prepare postgresql database for this project on your localhost, and change db connection setting according to your configs:
@@ -60,13 +60,13 @@ Warning! It will store a huge data.
 ## Run Program
 Scrap sewa-apartemen.net:
 ```commandline
-scrapy crawl sewa-apartemen
+> scrapy crawl sewa-apartemen
 ```
 
 Scrap sewa-apartemen.net:
 ```commandline
-scrapy crawl jual-apartemen
+> scrapy crawl jual-apartemen
 ```
 
-All result will stored in database & result file (json/csv). If you prefer not to store into database, just put comment
+All result will be stored in database & result file (json/csv). If you prefer not to store into database, just put comment
 on `ITEM_PIPELINES` line in `settings.py`
